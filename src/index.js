@@ -47,14 +47,16 @@ const pizzaData = [
   },
 ];
 
-const Pizza = function ({ pizzaObj: { photoName, name, ingredients, price } }) {
+const Pizza = function ({
+  pizzaObj: { photoName, name, ingredients, price, soldOut },
+}) {
   return (
-    <div className="pizza">
+    <div className={`pizza ${soldOut ? "sold-out" : ""}`}>
       <img src={photoName} alt={name} />
       <div>
         <h3>{name}</h3>
         <p>{ingredients}</p>
-        <span>{+price + 3}</span>
+        <span>{soldOut ? "SOLD OUT" : +price + 3}</span>
       </div>
     </div>
   );

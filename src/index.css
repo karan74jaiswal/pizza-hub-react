@@ -141,6 +141,7 @@ body {
 }
 
 .pizza.sold-out {
+  /* background: #888; */
   color: #888;
 }
 
